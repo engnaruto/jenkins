@@ -1,0 +1,23 @@
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+#
+# This workflow file requires a free account on Bearer.com to manage findings, notifications and more.
+# See https://docs.bearer.com/guides/bearer-cloud/
+name: Bearer
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  rule_check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run Report
+        id: report
+        uses: bearer/bearer-action@v2
